@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Visualizations{% endblock %}
+
+{% block content %}
+<h1>Visualizations</h1>
+
+<h2>Median Income vs Median House Value</h2>
+<img src="data:image/png;base64,{{ scatter_plot }}" alt="Scatter Plot" class="img-fluid">
+
+<h2>Feature Correlation Heatmap</h2>
+<img src="data:image/png;base64,{{ heatmap }}" alt="Heatmap" class="img-fluid">
+
+<h2>Housing Median Age vs Median House Value</h2>
+<img src="data:image/png;base64,{{ boxplot }}" alt="Box Plot" class="img-fluid">
+{% endblock %}

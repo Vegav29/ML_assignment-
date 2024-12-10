@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center text-primary mb-4">Predict House Price</h1>
+            <!-- Adding the encoding attribute to the form -->
+            <form method="POST" action="/predict" class="shadow p-4 rounded bg-light" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="longitude" class="form-label">Longitude:</label>
+                    <input type="number" step="0.01" name="longitude" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude:</label>
+                    <input type="number" step="0.01" name="latitude" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="housing_median_age" class="form-label">Housing Median Age:</label>
+                    <input type="number" name="housing_median_age" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="total_rooms" class="form-label">Total Rooms:</label>
+                    <input type="number" name="total_rooms" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="total_bedrooms" class="form-label">Total Bedrooms:</label>
+                    <input type="number" name="total_bedrooms" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="population" class="form-label">Population:</label>
+                    <input type="number" name="population" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="median_income" class="form-label">Median Income:</label>
+                    <input type="number" step="0.01" name="median_income" class="form-control" required>
+                </div>
+                <!-- Ocean Proximity Fields -->
+                <div class="mb-3">
+                    <label for="ocean_proximity_NEAR BAY" class="form-label">Ocean Proximity (NEAR BAY):</label>
+                    <input type="number" name="ocean_proximity_NEAR BAY" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ocean_proximity_NEAR OCEAN" class="form-label">Ocean Proximity (NEAR OCEAN):</label>
+                    <input type="number" name="ocean_proximity_NEAR OCEAN" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ocean_proximity_ISLAND" class="form-label">Ocean Proximity (ISLAND):</label>
+                    <input type="number" name="ocean_proximity_ISLAND" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="ocean_proximity_INLAND" class="form-label">Ocean Proximity (INLAND):</label>
+                    <input type="number" name="ocean_proximity_INLAND" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Predict</button>
+                </div>
+            </form>
+            
+            {% if prediction %}
+            <div class="mt-4 p-4 text-center bg-success text-white rounded shadow">
+                <h2>Predicted Price:</h2>
+                <h3>${{ "{:,.2f}".format(prediction) }}</h3>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
