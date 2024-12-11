@@ -4,16 +4,16 @@ from pymongo import MongoClient
 
 class FlaskTestCase(unittest.TestCase):
     def setUp(self):
-        # Configure Flask app for testing
+        
         self.app = app.test_client()
         self.app.testing = True
 
         # Set up test database
-        self.mongo_client = MongoClient("mongodb://localhost:27017/")  # Use local MongoDB for testing
+        self.mongo_client = MongoClient("url")  # Use local MongoDB for testing
         self.test_db = self.mongo_client["test_todo"]
         self.test_collection = self.test_db["test_tododb"]
 
-        # Replace the app's collection with the test collection
+        #
         global collection
         collection = self.test_collection
 
@@ -39,7 +39,6 @@ class FlaskTestCase(unittest.TestCase):
         self.assertIn(b"Boxplot", response.data)
 
     def test_prediction(self):
-        # Simulate form data for prediction
         form_data = {
             "median_income": 5.0,
             "housing_median_age": 30,
