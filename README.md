@@ -45,10 +45,7 @@ The following Python libraries are used in this project:
 
 ## Setup Instructions
 
-### Step 1: Clone the Repository
-```bash
-$ git clone <repository_url>
-$ cd <repository_folder>
+
 ```
 
 ### Step 2: Install Dependencies
@@ -123,8 +120,7 @@ The application will run on [http://127.0.0.1:5000/](http://127.0.0.1:5000/) by 
 
 ## Screenshots
 
-### Home Page
-![Home Page](path/to/homepage_screenshot.png)
+
 
 ### Descriptive Statistics
 ![Descriptive Statistics]![image](https://github.com/user-attachments/assets/cf1dd6dd-c42c-4d3f-8b4a-859591efc7d7)
@@ -140,7 +136,7 @@ The application will run on [http://127.0.0.1:5000/](http://127.0.0.1:5000/) by 
 ![Prediction Page]![image](https://github.com/user-attachments/assets/d7ba3470-3593-4e4e-9a56-e466ab3d45e9)
 
 ![image](https://github.com/user-attachments/assets/bbcec1ec-8d98-4954-9ea2-31e3b2686d39)
-##Mongo db collection
+## Mongo db collection
 ![image](https://github.com/user-attachments/assets/d68a3adf-70f8-4e54-9230-7cea42564fcd)
 
 ---
